@@ -3002,7 +3002,7 @@ input, select, textarea {
 			margin-left: 4em;
 			padding: 0.65em;
 			border-radius: 100%;
-			border: solid 1px;
+			/*border: solid 1px; */
 		}
 
 			.spotlight .image img {
