@@ -22,7 +22,7 @@
 					<header id="header">
 					
 						
-						<span class="logo"><img src="images/logo.png" width="487" height="200" alt="" /></span>
+						<span class="logo"><img src="images/logo.png" width="40%" height="40%" alt="" /></span>
 						 
      
 					
@@ -31,8 +31,8 @@
 					<nav id="nav">
 						<ul>
 							<ul class="links">
-								<li class="active"><a href="index.html">Main</a></li>
-								<li><a href="about.html">About</a></li>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html" class="active">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								<!--<li><a href="generic.html">Aproach</a></li>  -->
 								<li><a href="app.html">App</a></li>
@@ -44,35 +44,86 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
-								
-								<h2>About Clarifying Care</h2>
-								<p>Clarifying Care aims to improves hospital efficiency and patient outcomes through the use of new innovative tools.</p>
-								<p>Our Process/Method - Using Lang chain, LLama 2 to create summary, etc.</p>
-								<h2>Clarifying Care Team</h2>
+								<header class="major">
+								<h2>Mission Background</h2>
+								</header>
+								<p>Clarifying Care aims to improves hospital efficiency and patient outcomes through the use of new innovative tools.<br> 
+									We are focused on improving the current discharge summary creation and communication.<br>
+									After a hospital visit in the US, you can expect to be provided with a discharge summary, which is a report detailing events of your stay and further care that needs to be taken.<br>
+									Discharge summaries can be <b>confusing</b> for patients to read and understand. They also <b>take up precious hospital time</b> to create. 
+								</p>
+
+							
+							</section>
+							<section id="content" class="main special">
+								<header class="major">
+								<h2>Clarifying Care Team</h2> </header>
 								
 								<div class="box alt">
 									<div class="row gtr-uniform">
-										<div class="col-3"><span class="image fit"><img src="images/shalini.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> Shalini Chawla </figcaption>
+										<div class="col-3"><span class="image fit"><img src="images/shalini.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> <b>Shalini Chawla</b></figcaption>
 											<ul class="icons" style="text-align: center;">
-												<li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>
+												<!-- <li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>-->
 												<li><a href="https://www.linkedin.com/in/shalinichawla/" class="icon brands fa-linkedin alt" ><span class="label">Linkedin</span></a></li>
 											</ul></div>	
-										<div class="col-3"><span class="image fit"><img src="images/ChrisG.png" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> Chris Grimes </figcaption>
+										<div class="col-3"><span class="image fit"><img src="images/ChrisG.png" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> <b>Chris Grimes</b> </figcaption>
 											<ul class="icons" style="text-align: center;">
-												<li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>
+												<!-- <li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>-->
 												<li><a href="https://www.linkedin.com/in/chris-grimes/" class="icon brands fa-linkedin alt" ><span class="label">Linkedin</span></a></li>
 											</ul></div>
-										<div class="col-3"><span class="image fit"><img src="images/jose1.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center" > Jose Higareda </figcaption>
+										<div class="col-3"><span class="image fit"><img src="images/jose1.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center" > <b>Jose Higareda</b></figcaption>
 											<ul class="icons" style="text-align: center;">
-												<li><a href="https://github.com/jahigareda"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>
+												<!-- <li><a href="https://github.com/jahigareda"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>-->
 												<li><a href="https://www.linkedin.com/in/jose-higareda/" class="icon brands fa-linkedin alt" ><span class="label">Linkedin</span></a></li>
 											</ul></div>
-										<div class="col-3"><span class="image fit"><img src="images/MMartin.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> Megan Martin </figcaption >
+										<div class="col-3"><span class="image fit"><img src="images/MMartin.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> <b>Megan Martin</b> </figcaption >
 											<ul class="icons" style="text-align: center;">
-												<li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>
+												<!-- <li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>-->
 												<li><a href="www.linkedin.com/in/megan-martin131" class="icon brands fa-linkedin alt" ><span class="label">Linkedin</span></a></li>
-											</ul></div>
-								<p>Text Placeholder. Can also make a section for thanking SME that helped.</p>
+											</ul></div></div>
+											<br>
+										</section>
+										<section id="content" class="main">
+										<header class="major">
+										<h2>Methodology</h2> </header>
+								
+										<h3><b>Discharge Summaries</b></h3>
+										<p>Our sample discharge summaries came from the <a href="https://www.physionet.org/content/mimic-iv-note/2.2/" style="color:#38bfe9;">MIMIC-IV-Note dataset</a>.<br>
+										</p>
+										<h3><b>LLM & RAG</b></h3>	
+											<p>We would need a way to understand and transform the text, which is something a Large Language Model (LLM) is great at doing.<br>
+											We selected the LLAMA 2 as a starting LLM, and <a href="https://www.langchain.com/" style="color:#38bfe9;">Langchain</a> to help with Retrieval-Augmented Generation (RAG) and generate source citation. 
+											(Note: LLM's will continue get better in the future, and the good thing is that the model can easily be swapped out in our aproach, allowing our tool to continuously improve)<br><br>
+											
+											RAG can be generally thought as of “A technique for enhancing the accuracy and reliability of generative AI models with facts fetched from external sources.” In this case, using the patient discharge summaries to find answers to our questions/prompts.<br><br>
+											
+											During initial development, in order to leverage CPU processing on our computers we used a quantized model from <a href="https://huggingface.co/TheBloke/Llama-2-7B-GGUF" style="color:#38bfe9;">Hugging Face</a>. <br>
+											The GGUF model format was flexible for us to be able to develop on tools that were readily avaliable to us, and then later on be able to host on an AWS instace, where we were then able to optimize to use GPU power.<br>
+										</p>
+										<h3><b>Patient Friendly</b></h3>	 
+											<p style="margin-bottom:0;">Now that we had the hospital discharge summaries and a way to process them, what should a patient freindly summary look like? <br>
+											We looked at an industry standard process, the <a href="https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/sbar.html" style="color:#38bfe9;"">SBAR</a> method. <br>
+											We showed our results and collaborated with board certified physicians and nurses. <br>
+											They provided crutial feedback that lead to more improvements, with stronger empahsis on patient next steps:
+											</p>
+											<ul>
+												<li>Admission Information</li>
+												<li>Next Steps (Care and Medications)</li>
+												<li>About the Stay</li>
+												<li>Relevant Exams and Results</li>
+											</ul>
+										</section>
+								<section id="content" class="main">
+								<header class="major">
+								<h2>Medical Experts</h2>
+								</header>
+								<p style="margin-bottom:0;"> Thank you to the board certified physicians and nurses that collaborated with us:</p> 
+								
+								<ul>
+									<li>Dr. Andy Peiffer MD, PhD</li>
+									<li>Dr. Anna Woods, MD</li>
+									<!-- <li>Felis enim etiam feugiat.</li>-->
+								</ul>
 							</section>
 
 					</div>
@@ -80,7 +131,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Copyright 2024 Shalini Chawla, Chris Grimes, Jose Higareda, and Megan Martin University of California, Berkeley. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
