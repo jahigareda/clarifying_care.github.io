@@ -3350,7 +3350,7 @@ input, select, textarea {
 				vertical-align: middle;
 				font-size: 0.8em;
 			}
-
+		 }
 			@media screen and (max-width: 360px) {
 			
 				#nav {
@@ -3385,7 +3385,7 @@ input, select, textarea {
 
 
 
-			}
+			
 		
 
 
