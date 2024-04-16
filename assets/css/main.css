@@ -3014,10 +3014,10 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			.spotlight {
-				-moz-flex-direction: column-reverse;
-				-webkit-flex-direction: column-reverse;
-				-ms-flex-direction: column-reverse;
-				flex-direction: column-reverse;
+				-moz-flex-direction: column; /*-reverse;*/
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
 				text-align: center;
 			}
 
@@ -3351,7 +3351,42 @@ input, select, textarea {
 				font-size: 0.8em;
 			}
 
+			@media screen and (max-width: 360px) {
+			
+				#nav {
+					-moz-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+					-webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+					-ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+					transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+					background-color: #ffffff;
+					color: #636363;
+					position: absolute;
+					width: 64em;
+					max-width: calc(100%);
+					padding: 1em;
+					background-color: #f7f7f7;
+					border-top-left-radius: 0.25em;
+					border-top-right-radius: 0.25em;
+					cursor: default;
+					text-align: center;
+					
+				}
+				#nav ul li {
+					-moz-transition: margin 0.2s ease;
+					-webkit-transition: margin 0.2s ease;
+					-ms-transition: margin 0.2s ease;
+					transition: margin 0.2s ease;
+					display: inline-block;
+					margin: 0 0.35em;
+					padding: 0;
+					vertical-align: middle;
+					font-size: 0.8em;
+				}
 
+
+
+
+		}
 
 
 
