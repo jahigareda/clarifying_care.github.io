@@ -79,10 +79,28 @@
 										<div class="col-3"><span class="image fit"><img src="images/MMartin.jpg" alt="" style="border-radius: 50%;" /><figcaption style="text-align: center"> <b>Megan Martin</b> </figcaption >
 											<ul class="icons" style="text-align: center;">
 												<!-- <li><a href="#"  class="icon brands fa-github alt" ><span class="label">GitHub</span></a></li>-->
-												<li><a href="www.linkedin.com/in/megan-martin131" class="icon brands fa-linkedin alt" ><span class="label">Linkedin</span></a></li>
+												<li><a href="https://www.linkedin.com/in/megan-martin131" class="icon brands fa-linkedin alt" ><span class="label">Linkedin</span></a></li>
 											</ul></div></div>
 											<br>
 										</section>
+										<section id="content" class="main">
+											<header class="major">
+											<h2 align="center">Key Improvements</h2>
+											</header>
+											<h3><b>Patient Preferred</b></h3>	 
+											<p>Based on subject matter expert interviews with board certified physicians and nurses, clear medication instructions and explanations help patients to follow instructions and prevent readmission. 
+												Guided by this feedback, the Clarifying Care discharge summary was organized to include medication instructions first, focusing on explaining the prescribing instructions and uses for the medication. 
+												<br><br>In a survey of users from the general public, <u>92% preferred</u> the medication instructions from Clarifying Care output compared to the original hospital medication instructions. Additionally, survey respondents scored an example Clarifying Care discharge summary as high on explaining medical jargon, usefulness, and patient friendliness. 
+												</p>
+											<h3><b>Easier to Read</b></h3>	 	
+											<p>The Dale-Chall readability score was selected to quantify Clarifying Care's impact on readability. This readability metric provides a grade level estimate based on the proportion of complex words vs. standard words present. 
+												<br><br>Clarifying Care achieved <u>decrease in language complexity by at least one full grade level</u>, achieving an average output score of 8.21 (11th to 12th grade) compared to the medical notes input average of 9.29 (college level). 
+											</p>
+											
+
+								</section>
+
+
 										<section id="content" class="main">
 										<header class="major">
 										<h2 align="center">Methodology</h2> </header>
@@ -91,28 +109,37 @@
 										<p>Our sample discharge summaries came from the <a href="https://www.physionet.org/content/mimic-iv-note/2.2/" style="color:#38bfe9;">MIMIC-IV-Note dataset</a>.<br>
 										</p>
 										<h3><b>LLM & RAG</b></h3>	
-											<p>We would need a way to understand and transform the text, which is something a Large Language Model (LLM) is great at doing.<br>
-											We selected the LLAMA 2 as a starting LLM, and <a href="https://www.langchain.com/" style="color:#38bfe9;">Langchain</a> to help with Retrieval-Augmented Generation (RAG) and generate source citation. 
-											(Note: LLM's will continue get better in the future, and the good thing is that the model can easily be swapped out in our aproach, allowing our tool to continuously improve)<br><br>
+											<p>Generating a discharge summary requires understanding complex text and transforming it into easy to understand summaries. Large Language Models (LLMs) excel in both summarization and generation tasks.<br>
+											We selected LLAMA 2 as a starting LLM, and <a href="https://www.langchain.com/" style="color:#38bfe9;">Langchain</a> to enable Retrieval-Augmented Generation (RAG) and source citation. 
+											<br><br>
 											
-											RAG can be generally thought as of “A technique for enhancing the accuracy and reliability of generative AI models with facts fetched from external sources.” In this case, using the patient discharge summaries to find answers to our questions/prompts.<br><br>
+											RAG can be generally thought as of “A technique for enhancing the accuracy and reliability of generative AI models with facts fetched from external sources.” 
+											In this case, Clarifying Care utilizes the input hospital notes to source answers for a set of prompts. 
+											Given that LLMs will continue to be improved and released, RAG provides us with a modular framework allowing for easy swapping of LLMs without significant re-work. 
+											.<br><br>
 											
-											During initial development, in order to leverage CPU processing on our computers we used a quantized model from <a href="https://huggingface.co/TheBloke/Llama-2-7B-GGUF" style="color:#38bfe9;">Hugging Face</a>. <br>
-											The GGUF model format was flexible for us to be able to develop on tools that were readily avaliable to us, and then later on be able to host on an AWS instace, where we were then able to optimize to use GPU power.<br>
+											We used a quantized model from <a href="https://huggingface.co/TheBloke/Llama-2-7B-GGUF" style="color:#38bfe9;">Hugging Face</a> during project development in order to leverage CPU processing on our computers . <br>
+											The GGUF model format was flexible for initial development and testing on readily available hardware. 
+											Given the modular framework, after initial development, the application was later hosted on an AWS instance, leveraging greater GPU computational availability.
+											<br>
 										</p>
-										<h3><b>Patient Friendly</b></h3>	 
-											<p style="margin-bottom:0;">Now that we had the hospital discharge summaries and a way to process them, what should a patient freindly summary look like? <br>
-											We looked at an industry standard process, the <a href="https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/sbar.html" style="color:#38bfe9;"">SBAR</a> method. <br>
-											We showed our results and collaborated with board certified physicians and nurses. <br>
-											They provided crutial feedback that lead to more improvements, with stronger empahsis on patient next steps:
+										<h3><b>Patient-Friendly Generation</b></h3>	 
+											<p style="margin-bottom:0;">After development of the app framework, we developed an example patient-friendly discharge summary.
+												 Unfortunately, there are no uniform recommendations for discharge summaries and formats are highly variable across US hospitals. 
+												Initially, a published format based on the <a href="https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/sbar.html" style="color:#38bfe9;"">SBAR</a> method was selected. 
+												After interviewing and receiving feedback from board certified physicians and nurses, an alternate and more patient-friendly format was selected. 
+												<br><br>The final format provides more emphasis on patient after-care instructions and medications:   
+												<br>											
 											</p>
 											<ul>
-												<li>Admission Information</li>
+												<li>Admission & Patient Information</li>
 												<li>Next Steps (Care and Medications)</li>
-												<li>About the Stay</li>
+												<li>About the Stay (Admission History and Diagnoses) </li>
 												<li>Relevant Exams and Results</li>
 											</ul>
+											<p>Given that RAG provides a modular framework, the prompts can be easily switched out to generate a hospital's preferred discharge summary format.  </p>
 										</section>
+
 								<section id="content" class="main">
 								<header class="major">
 								<h2 align="center">Medical Experts</h2>
@@ -122,7 +149,7 @@
 								<ul>
 									<li>Dr. Andy Peiffer MD, PhD</li>
 									<li>Dr. Anna Woods, MD</li>
-									<!-- <li>Felis enim etiam feugiat.</li>-->
+									<li>Sara Fenton, RN</li>
 								</ul>
 							</section>
 
